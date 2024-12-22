@@ -103,7 +103,15 @@ function SimpleREvent(btn, box) {
 }
 
 onUiLoaded(function () {
-  const rows = gradioApp().querySelectorAll("#txt2img_dimensions_row .form, #img2img_dimensions_row .form");
+  let rows;
+  let isThatForge = gradioApp().querySelector('.gradio-container-4-40-0') !== null;
+
+  if (isThatForge) {
+    rows = gradioApp().querySelectorAll("#txt2img_dimensions_row, #img2img_dimensions_row");
+  } else {
+    rows = gradioApp().querySelectorAll("#txt2img_dimensions_row .form, #img2img_dimensions_row .form");
+  }
+
   const switchBtns = gradioApp().querySelectorAll("#txt2img_res_switch_btn, #img2img_res_switch_btn");
 
   const SimpleRdiv = document.createElement('div');
@@ -156,7 +164,7 @@ onUiLoaded(function () {
     });
   });
 
-  function ClickOutsideAR(e) {
+  function ClickOutsideEL(e) {
     document.querySelectorAll('#Simple-R-Box').forEach(box => {
       const btn = box.parentElement.querySelector('#Simple-R-Main-Button');
       if (box.style.display === 'block' && !box.contains(e.target) && !btn.contains(e.target)) {
@@ -166,6 +174,6 @@ onUiLoaded(function () {
     });
   }
 
-  document.addEventListener('mousedown', ClickOutsideAR);
-  document.addEventListener('touchstart', ClickOutsideAR, { passive: true });
+  document.addEventListener('mousedown', ClickOutsideEL);
+  document.addEventListener('touchstart', ClickOutsideEL, { passive: true });
 });
