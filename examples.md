@@ -1,4 +1,9 @@
-<details><summary>Click for examples</summary>
+## SD Simple Dimension Preset
+<br>
+Click <code>Info</code> to see details.<br>
+Click <code>Save</code> button to save the settings, then go back to the extension.<br>
+<br>
+<details><summary>Info</summary>
 <p>
 
 ```
@@ -22,3 +27,5 @@
 
 </p>
 </details>
+<br>
+<br>

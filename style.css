@@ -5,37 +5,147 @@
 
 #Simple-R-Main-Button {
   padding: 0;
-  border: none;
+  box-shadow: none;
+}
+
+#Simple-R-Main-Button svg {
+  fill: var(--button-secondary-text-color);
+  transition: 0.4s ease;
+}
+
+#Simple-R-Main-Button svg:hover {
+  fill: var(--button-secondary-text-color-hover);
+}
+
+#Simple-Setting-Button {
+  top: 0;
+  padding: 0;
+  position: absolute;
+  z-index: 9999;
+  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color);
+  transition: 0.4s ease;
+}
+
+#Simple-Setting-Button:hover {
+  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color-hover);
+}
+
+#Simple-Setting-Button svg {
+  transition: 0.4s ease;
+  stroke: var(--button-secondary-text-color);
+}
+
+#Simple-Setting-Button svg:hover {
+  stroke: var(--button-secondary-text-color-hover);
 }
 
 #Simple-R-Box {
+  margin-top: 2px;
   position: absolute;
-  width: 11.4rem;
+  width: 10.5rem;
   z-index: 9999;
-  border: 2px solid var(--primary-500);
-  border-radius: 0.8rem;
-  padding: 5px;
-  background: var(--background-fill-primary);
+  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color);
+  border-radius: 0.5rem;
+  padding-top: 5px;
+  padding-bottom: 4px;
+  background: var(--body-background-fill);
   text-align: center;
+  transition: 0.4s ease;
+}
+
+#Simple-R-Box:hover {
+  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color-hover);
 }
 
 #Simple-R-Label {
   margin-top: 10px;
   text-align: center;
+  pointer-events: none;
 }
 
 #Simple-R-Button {
   margin: 2px;
-  padding-right: 5px;
-  padding-left: 5px;
-  border: 1px solid var(--primary-500);
-  background: transparent;
+  padding-right: 3px;
+  padding-left: 3px;
+  box-shadow: 0 0 0 1.5px transparent;
+  background: var(--input-background-fill);
   border-radius: 0.25rem;
   cursor: pointer;
   transition: 0.4s ease;
 }
 
 #Simple-R-Button:hover {
-  color: var(--primary-500);
-  background: var(--input-background-fill);
+  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color-hover);
+  background: transparent;  
+}
+
+#setting_simple_dimension_preset_doc details {
+  padding-left: 1.5px;
+}
+
+#setting_simple_dimension_preset_doc details .code_wrap {
+  box-shadow: 0 0 0 1.5px var(--body-text-color);
+  filter: brightness(0.7);
+  border-radius: 10px;
+  border: 0.1px solid transparent;
+  transition: 0.4s ease;
+}
+
+#setting_simple_dimension_preset_doc details .code_wrap:hover {
+  filter: brightness(1);
+}
+
+#setting_simple_dimension_preset_doc details pre {
+  padding-top: 0;
+  background: transparent;
+  padding-bottom: 0;
+}
+
+#setting_simple_dimension_preset_config {
+  border-color: transparent;
+  margin-top: 1px;
+}
+
+#setting_simple_dimension_preset_config .codemirror-wrapper {
+  padding: 1.5px;
+}
+
+#setting_simple_dimension_preset_config .cm-editor {
+  border-radius: 10px;
+  box-shadow: 0 0 0 1.5px var(--body-text-color-subdued);
+  filter: brightness(0.7);
+  transition: 0.4s ease;
+}
+
+#setting_simple_dimension_preset_config .cm-editor:hover {
+  filter: brightness(1);
+}
+
+#setting_simple_dimension_preset_config .cm-editor.cm-focused {
+  box-shadow: 0 0 0 1.5px var(--color-accent);
+  filter: brightness(1);
+}
+
+#setting_simple_dimension_preset_config div[data-testid="block-label"] {
+  display: none;
+}
+
+#setting_simple_dimension_preset_config .cm-gutter.cm-foldGutter {
+  margin-right: -5px;
+}
+
+#setting_simple_dimension_preset_config .cm-gutter.cm-lineNumbers {
+  margin-left: 3px;
+}
+
+#setting_simple_dimension_preset_save {
+  position: relative;
+  top: 10px;
+}
+
+#setting_simple_dimension_preset_save_button {
+  border-radius: var(--button-large-radius);
+  width: 150px;
+  font-size: 20px;
+  line-height: 1;
 }
