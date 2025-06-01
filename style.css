@@ -1,3 +1,9 @@
+/* Combine common transition properties */
+:root {
+  --simple-transition: 0.4s ease;
+  --simple-border-width: 1.5px;
+}
+
 #Simple-R {
   overflow: visible;
   position: relative;
@@ -10,7 +16,7 @@
 
 #Simple-R-Main-Button svg {
   fill: var(--button-secondary-text-color);
-  transition: 0.4s ease;
+  transition: var(--simple-transition);
 }
 
 #Simple-R-Main-Button svg:hover {
@@ -22,20 +28,20 @@
   padding: 0;
   position: absolute;
   z-index: 9999;
-  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color);
-  transition: 0.4s ease;
+  box-shadow: 0 0 0 var(--simple-border-width) var(--button-secondary-text-color);
+  transition: var(--simple-transition);
 }
 
 #Simple-Setting-Button:hover {
-  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color-hover);
+  box-shadow: 0 0 0 var(--simple-border-width) var(--button-secondary-text-color-hover);
 }
 
 #Simple-Setting-Button svg {
-  transition: 0.4s ease;
+  transition: var(--simple-transition);
   stroke: var(--button-secondary-text-color);
 }
 
-#Simple-Setting-Button svg:hover {
+#Simple-Setting-Button:hover svg {
   stroke: var(--button-secondary-text-color-hover);
 }
 
@@ -44,17 +50,16 @@
   position: absolute;
   width: 10.5rem;
   z-index: 9999;
-  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color);
+  box-shadow: 0 0 0 var(--simple-border-width) var(--button-secondary-text-color);
   border-radius: 0.5rem;
-  padding-top: 5px;
-  padding-bottom: 4px;
+  padding: 5px 0 4px;
   background: var(--body-background-fill);
   text-align: center;
-  transition: 0.4s ease;
+  transition: var(--simple-transition);
 }
 
 #Simple-R-Box:hover {
-  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color-hover);
+  box-shadow: 0 0 0 var(--simple-border-width) var(--button-secondary-text-color-hover);
 }
 
 #Simple-R-Label {
@@ -65,30 +70,30 @@
 
 #Simple-R-Button {
   margin: 2px;
-  padding-right: 3px;
-  padding-left: 3px;
-  box-shadow: 0 0 0 1.5px transparent;
+  padding: 0 3px;
+  box-shadow: 0 0 0 var(--simple-border-width) transparent;
   background: var(--input-background-fill);
   border-radius: 0.25rem;
   cursor: pointer;
-  transition: 0.4s ease;
+  transition: var(--simple-transition);
 }
 
 #Simple-R-Button:hover {
-  box-shadow: 0 0 0 1.5px var(--button-secondary-text-color-hover);
+  box-shadow: 0 0 0 var(--simple-border-width) var(--button-secondary-text-color-hover);
   background: transparent;  
 }
 
+/* Settings styling - consolidated selectors */
 #setting_simple_dimension_preset_doc details {
   padding-left: 1.5px;
 }
 
 #setting_simple_dimension_preset_doc details .code_wrap {
-  box-shadow: 0 0 0 1.5px var(--body-text-color);
+  box-shadow: 0 0 0 var(--simple-border-width) var(--body-text-color);
   filter: brightness(0.7);
   border-radius: 10px;
   border: 0.1px solid transparent;
-  transition: 0.4s ease;
+  transition: var(--simple-transition);
 }
 
 #setting_simple_dimension_preset_doc details .code_wrap:hover {
@@ -96,9 +101,8 @@
 }
 
 #setting_simple_dimension_preset_doc details pre {
-  padding-top: 0;
+  padding: 0;
   background: transparent;
-  padding-bottom: 0;
 }
 
 #setting_simple_dimension_preset_config {
@@ -112,18 +116,18 @@
 
 #setting_simple_dimension_preset_config .cm-editor {
   border-radius: 10px;
-  box-shadow: 0 0 0 1.5px var(--body-text-color-subdued);
+  box-shadow: 0 0 0 var(--simple-border-width) var(--body-text-color-subdued);
   filter: brightness(0.7);
-  transition: 0.4s ease;
+  transition: var(--simple-transition);
 }
 
-#setting_simple_dimension_preset_config .cm-editor:hover {
+#setting_simple_dimension_preset_config .cm-editor:hover,
+#setting_simple_dimension_preset_config .cm-editor.cm-focused {
   filter: brightness(1);
 }
 
 #setting_simple_dimension_preset_config .cm-editor.cm-focused {
-  box-shadow: 0 0 0 1.5px var(--color-accent);
-  filter: brightness(1);
+  box-shadow: 0 0 0 var(--simple-border-width) var(--color-accent);
 }
 
 #setting_simple_dimension_preset_config div[data-testid="block-label"] {
